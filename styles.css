@@ -94,7 +94,7 @@ body::before {
 }
 
 .fixed-header .menu-links li a:hover {
-    color: #7600d1;
+    color: #ffffff;
 }
 
 /* Sağ üstte Launch App butonu */
@@ -463,11 +463,11 @@ h1 {
 
 /* Taiko Token Parıltı ve Gölge */
 .taiko-token .token-image {
-    box-shadow: 0 0 15px rgba(121, 43, 225, 0.5);
+    box-shadow: 0 0 15px rgba(210, 11, 200, 0.5);
 }
 
 .taiko-token:hover .token-image {
-    box-shadow: 0 0 25px rgba(121, 43, 225, 0.8);
+    box-shadow: 0 0 25px rgba(210, 11, 200, 0.5);
 }
 
 
