@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Particles.js Arka Plan -->
+    <div id="particles-js"></div>
+
     <!-- Sabit Üst Menü -->
     <header class="fixed-header">
         <!-- Sol üstte logo ve site ismi -->
@@ -106,5 +109,84 @@
             </footer>
         </div>
     </main>
+     <!-- particles.js ve stats.js kütüphaneleri -->
+     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+     <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+ 
+     <!-- particles.js Ayarları -->
+     <script>
+         particlesJS("particles-js", {
+             "particles": {
+                 "number": {
+                     "value": 24,
+                     "density": {
+                         "enable": true,
+                         "value_area": 800
+                     }
+                 },
+                 "color": {
+                     "value": "#2f1a34"
+                 },
+                 "shape": {
+                     "type": "polygon",
+                     "stroke": {
+                         "width": 0,
+                         "color": "#000"
+                     },
+                     "polygon": {
+                         "nb_sides": 6
+                     }
+                 },
+                 "opacity": {
+                     "value": 0.3,
+                     "random": true
+                 },
+                 "size": {
+                     "value": 75,
+                     "random": false
+                 },
+                 "move": {
+                     "enable": true,
+                     "speed": 3,
+                     "random": true,
+                     "out_mode": "out"
+                 }
+             },
+             "interactivity": {
+                 "events": {
+                     "onclick": {
+                         "enable": true,
+                         "mode": "push"
+                     }
+                 }
+             },
+             "retina_detect": true
+         });
+ 
+         // Particle count updater
+         var count_particles, stats, update;
+         stats = new Stats();
+         stats.setMode(0);
+         stats.domElement.style.position = 'absolute';
+         stats.domElement.style.left = '0px';
+         stats.domElement.style.top = '0px';
+         document.body.appendChild(stats.domElement);
+         count_particles = document.querySelector('.js-count-particles');
+         update = function() {
+             stats.begin();
+             stats.end();
+             if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                 count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+             }
+             requestAnimationFrame(update);
+         };
+         requestAnimationFrame(update);
+     </script>
+
+
+
+
+
+
 </body>
 </html>
